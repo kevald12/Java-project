@@ -10,5 +10,9 @@ public interface EmpresaService {
 
     List<Empresa> getAllEmpresas ();
 
-    public Empresa guardarEmpresa (Empresa empresa);
+    Empresa guardarEmpresa (Empresa empresa);
+
+    Empresa modificarEmpresa (Empresa empresa);
+
+    String borrarEmpresaPorId (Long id);
 }

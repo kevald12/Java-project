@@ -36,4 +36,10 @@ public class ClienteController {
         return clienteService.modificarCliente(cliente);
     }
 
+    @DeleteMapping ("/deleteClient/{id}")
+    public String deleteClient (@PathVariable(value = "id")Long id){
+        return clienteService.borrarClientePorId(id);
+    }
+
+
 }

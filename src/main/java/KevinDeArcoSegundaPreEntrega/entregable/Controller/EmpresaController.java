@@ -29,4 +29,14 @@ public class EmpresaController {
     public Empresa saveEmpresa(@RequestBody Empresa empresa){
         return empresaService.guardarEmpresa(empresa);
     }
+
+    @PutMapping ("/modifyEmpresa")
+    public Empresa modifyEmpresa (@RequestBody Empresa empresa){
+        return empresaService.modificarEmpresa (empresa);
+    }
+
+    @DeleteMapping ("/deleteEmpresa/{id}")
+    public String deleteEmpresa (@PathVariable(value = "id")Long id){
+        return empresaService.borrarEmpresaPorId(id);
+    }
 }

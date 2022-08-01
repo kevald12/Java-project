@@ -3,9 +3,7 @@ package KevinDeArcoSegundaPreEntrega.entregable.Controller;
 import KevinDeArcoSegundaPreEntrega.entregable.Entity.Producto;
 import KevinDeArcoSegundaPreEntrega.entregable.Service.ProductoService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,4 +23,28 @@ public class ProductoController {
     public List<Producto> getAllProducts (){
         return productoService.getAllProducts();
     }
+
+
+    @PostMapping("/saveProduct")
+    public Producto saveProduct(@RequestBody Producto producto){
+        return productoService.guardarProducto(producto);
+    }
+
+    @PutMapping ("/modifyProduct")
+    public Producto modifyClient (@RequestBody Producto producto){
+        return productoService.modificarProducto(producto);
+    }
+
+    @DeleteMapping ("/deleteProduct/{id}")
+    public String deleteProduct (@PathVariable(value = "id")Long id){
+        return productoService.borrarProductoPorId(id);
+    }
+
+
+    @PostMapping ("/restarProducto")
+    public String restarProducto(@RequestParam(value = "nro1")int nro1, @RequestParam( value = "id")Long id){
+        return productoService.restarStock(nro1, id);
+    }
+
+
 }

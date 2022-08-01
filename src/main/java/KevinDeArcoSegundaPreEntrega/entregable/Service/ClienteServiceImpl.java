@@ -21,9 +21,6 @@ public class ClienteServiceImpl implements ClienteService {
         return clienteRepository.findAll();
     }
 
-    public Cliente borrarClientePorId (Long id){
-        return clienteRepository.findById(id).get();
-    }
 
     public Cliente guardarCliente(Cliente cliente){
         return clienteRepository.save(cliente);
@@ -33,5 +30,11 @@ public class ClienteServiceImpl implements ClienteService {
         Cliente clienteModificado = clienteRepository.findById(cliente.getId()).get();
         clienteModificado.setNombre(cliente.getNombre());
         return clienteRepository.save(cliente);
+    }
+
+    public String borrarClientePorId (Long id){
+        Cliente cliente = clienteRepository.findById(id).get();
+        clienteRepository.deleteById(id);
+        return "eliminaste a" +" "+ cliente.getNombre();
     }
 }

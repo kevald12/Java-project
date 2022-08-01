@@ -10,9 +10,9 @@ public interface ClienteService {
 
     List<Cliente> obtenerTodosLosClientes();
 
-    Cliente borrarClientePorId (Long id);
-
     Cliente guardarCliente(Cliente cliente);
 
     Cliente modificarCliente (Cliente cliente);
+
+    String borrarClientePorId (Long id);
 }

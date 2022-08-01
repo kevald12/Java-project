@@ -10,4 +10,12 @@ public interface ProductoService {
 
     List<Producto> getAllProducts ();
 
+    Producto guardarProducto (Producto producto);
+
+    Producto modificarProducto (Producto producto);
+
+    String borrarProductoPorId (Long id);
+
+    String restarStock (int nro1, Long id);
+
 }
