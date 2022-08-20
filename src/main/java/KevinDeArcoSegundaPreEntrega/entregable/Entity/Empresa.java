@@ -5,8 +5,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
-@Entity
+@Entity (name = "empresa")
 @Data
 @Table(name = "empresa")
 @AllArgsConstructor
@@ -14,7 +15,7 @@ import javax.persistence.*;
 public class Empresa {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @Column(name = "empresa_id")
     private Long id;
 
     @Column (name = "nombre")
@@ -23,4 +24,7 @@ public class Empresa {
     @Column (name = "rubro")
     private String rubro;
 
+    @Column (name = "factura_id")
+    @OneToMany(mappedBy = "empresa", fetch = FetchType.EAGER)
+    private List<Factura> factura;
 }

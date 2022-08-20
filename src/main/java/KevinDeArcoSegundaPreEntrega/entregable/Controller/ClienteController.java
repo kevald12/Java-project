@@ -3,8 +3,12 @@ package KevinDeArcoSegundaPreEntrega.entregable.Controller;
 import KevinDeArcoSegundaPreEntrega.entregable.Entity.Cliente;
 import KevinDeArcoSegundaPreEntrega.entregable.Service.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import java.net.URI;
 import java.util.List;
 
 @RestController
@@ -27,7 +31,7 @@ public class ClienteController {
     }
 
     @PostMapping("/saveClient")
-    public Cliente saveClient(@RequestBody Cliente cliente){
+    public Cliente create (@Validated @RequestBody Cliente cliente){
         return clienteService.guardarCliente(cliente);
     }
 

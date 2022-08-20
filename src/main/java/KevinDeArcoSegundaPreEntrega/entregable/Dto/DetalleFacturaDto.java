@@ -1,5 +1,6 @@
 package KevinDeArcoSegundaPreEntrega.entregable.Dto;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -7,13 +8,12 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ProductoDto {
+public class DetalleFacturaDto {
 
-    private String nombre;
-
-    private int cantidadAntesDeRestar;
-
-    private int cantidadRestada;
+    private int precio;
 
     private int total;
+
+
+
 }

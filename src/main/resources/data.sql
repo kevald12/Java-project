@@ -1,3 +1,7 @@
+--Por medio de estos insert agrego la informacion, al base de datos
+
+
+
 INSERT INTO empresa (nombre, rubro) values
 ('Sonni','tecnologia');
 
@@ -19,3 +23,16 @@ INSERT INTO producto (nombre,descripcion,precio,cantidad) values
 ('Pantalla 40 pulgadas ', 'pantalla ultra delgada perfecta para peliculas',860,15),
 ('Control magico','control perfecto para cualquier aparato tecnologico',50,65),
 ('Reproductor de musica','dispositivo perfecto para guardar tu musica',60,20);
+
+
+INSERT INTO factura (numero, fecha, cliente_id, empresa_id )values
+(001,'1995-05-20',1,1),
+(002,'2022-05-30',3,1),
+(003,'2022-10-15',5,1),
+(004,'2022-04-11',2,1);
+
+INSERT INTO detalle_factura(factura_id,precio, cantidad_de_productos, producto_id, metodo_de_pago)values
+(1, 6.715 ,3 ,1 ,'debito'),
+(2, 10.500 ,3 ,2 ,'credito'),
+(3,7.300,3,5,'credito'),
+(4,110,2,2,'debito');
