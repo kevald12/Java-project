@@ -18,4 +18,5 @@ public interface ProductoService {
 
     String restarStock (int nro1, Long id);
 
+    void restarStockListProducto (List<Producto> productoList);
 }

@@ -1,5 +1,7 @@
 package KevinDeArcoSegundaPreEntrega.entregable.Entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -20,9 +22,11 @@ public class DetalleFactura {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name= "detalle_factura_id")
+    @JsonIgnore
     private Long id;
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn (name = "factura_id")
+    @JsonBackReference
     private Factura factura;
 
     @Column (name = "precio")

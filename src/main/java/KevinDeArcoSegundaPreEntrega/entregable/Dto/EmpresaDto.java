@@ -1,19 +1,15 @@
 package KevinDeArcoSegundaPreEntrega.entregable.Dto;
 
-
-import KevinDeArcoSegundaPreEntrega.entregable.Entity.Cliente;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
-
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
-public class DetalleFacturaDto {
+@AllArgsConstructor
+public class EmpresaDto {
 
-    private ProductoDto productoDto;
+    private String nombre;
 
-
+    private String rubro;
 }

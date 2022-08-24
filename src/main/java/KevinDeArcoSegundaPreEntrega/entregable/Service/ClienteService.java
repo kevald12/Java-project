@@ -6,7 +6,9 @@ import java.util.List;
 
 public interface ClienteService {
 
-    Cliente findById (Long id);
+   Cliente findById (Long id);
+
+    Cliente findByDni (Long id);
 
     List<Cliente> obtenerTodosLosClientes();
 

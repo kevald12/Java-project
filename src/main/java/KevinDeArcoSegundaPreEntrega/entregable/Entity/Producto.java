@@ -1,5 +1,6 @@
 package KevinDeArcoSegundaPreEntrega.entregable.Entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,6 +19,7 @@ public class Producto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "producto_id")
+    @JsonIgnore
     private Long id;
 
     @Column (name = "nombre")
@@ -32,7 +34,7 @@ public class Producto {
 
     @Column (name = "precio")
     @Min(value = 0, message = "El precio debe ser igual o superior a Cero (0)")
-    private double precio;
+    private int precio;
 
     @Column (name = "cantidad")
     @Min(value = 0, message = "La cantidad debe ser igual o superiro a Cero (0)")

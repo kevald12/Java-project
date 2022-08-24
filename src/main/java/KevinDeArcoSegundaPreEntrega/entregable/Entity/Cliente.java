@@ -1,6 +1,8 @@
 package KevinDeArcoSegundaPreEntrega.entregable.Entity;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,6 +21,7 @@ public class Cliente {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     @Column (name = "cliente_id")
+    @JsonIgnore
     private Long id;
 
     @Column (name = "nombre")
@@ -41,7 +44,8 @@ public class Cliente {
     @NotBlank(message = "Por favor ingrese la direccion")
     private String direccion;
 
-    @OneToMany (mappedBy = "cliente",fetch = FetchType.EAGER)
+    @OneToMany (mappedBy = "cliente",fetch = FetchType.LAZY)
+    @JsonManagedReference
     private List<Factura> factura;
 
 }

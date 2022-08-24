@@ -19,7 +19,7 @@ public class DetalleFacturaServiceImpl implements DetalleFacturaService {
     }
 
 
-    public List<DetalleFactura> obtenerTodosLosDetalles(){
+    public List<DetalleFactura> getAllTheDetails(){
         return detalleFacturaRepository.findAll();
     }
 

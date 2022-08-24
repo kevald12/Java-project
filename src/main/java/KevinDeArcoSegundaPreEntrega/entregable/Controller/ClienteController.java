@@ -17,11 +17,17 @@ public class ClienteController {
     @Autowired
     ClienteService clienteService;
 
-    @GetMapping("/getTheClient/{id}")
-    public Cliente getTheClient(@PathVariable(name = "id" )Long id){
+    @GetMapping("/getTheClientById/{id}")
+    public Cliente getTheClientById(@PathVariable(name = "id" )Long id){
 
         Cliente cliente = clienteService.findById(id);
         return cliente;
+    }
+
+    @GetMapping("GetTheClientByDni")
+    public Cliente getTheClientByDni(@PathVariable(name = "dni")Long id){
+        Cliente cliente = clienteService.findByDni(id);
+        return  cliente;
     }
 
     @GetMapping("/getAllClients")
